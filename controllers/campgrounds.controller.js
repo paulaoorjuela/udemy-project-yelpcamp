@@ -1,4 +1,5 @@
 const Campground = require('../models/campground');
+const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Campground.find({})
@@ -11,6 +12,7 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.createCampground = async (req, res, next) => {
     const campground = new Campground(req.body.campground)
+    campground.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     campground.author = req.user._id;
     await campground.save();
     req.flash('success', 'New Campground has been created')
@@ -19,7 +21,7 @@ module.exports.createCampground = async (req, res, next) => {
 
 module.exports.showCampground = async (req, res) => {
     const campground = await Campground.findById(req.params.id).populate({
-        path:'reviews',
+        path: 'reviews',
         populate: {
             path: 'author',
             select: 'username'
