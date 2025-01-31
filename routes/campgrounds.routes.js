@@ -20,7 +20,7 @@ router.route('/:id')
     // SHOW ONE CAMPGROUND
     .get(catchAsync(campgroundsController.showCampground))
     // UPDATE CAMPGROUND
-    .put(isLoggedIn, isAuthor, validateCampground, catchAsync(campgroundsController.updateCampground))
+    .put(isLoggedIn, isAuthor, upload.array('image'), validateCampground, catchAsync(campgroundsController.updateCampground))
     // DELETE CAMPGROUND
     .delete(isLoggedIn, isAuthor, catchAsync(campgroundsController.deleteCampground))
 
