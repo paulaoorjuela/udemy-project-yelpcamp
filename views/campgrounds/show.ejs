@@ -4,7 +4,6 @@
 
     <div class="row">
         <div class="col-6">
-            <div id='map'></div>
             <div id="campgroundCarousel" class="carousel slide">
                 <div class="carousel-inner">
                     <% campground.images.forEach((image, i)=> { %>
@@ -57,9 +56,9 @@
             </div>
         </div>
         <div class="col-6">
-            <% if(currentUser){ %>
-                <form class="mb-5 validate-form" action="/campgrounds/<%= campground._id %>/reviews" method="POST"
-                    novalidate>
+            <div id='map'></div>
+                <form class="mb-5 validate-form" action="<%= currentUser ? `/campgrounds/${campground._id}/reviews` : '/login' %>" method="POST"
+                    novalidate onsubmit="return checkLogin(event)">
                     <h2>Leave your review</h2>
                     <fieldset class="starability-basic">
                         <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
@@ -85,7 +84,8 @@
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
-                <% } %>
+
+                <% if(campground.reviews.length > 0) {%>
                     <% for (let review of campground.reviews) {%>
                         <div class="card mb-3">
                             <div class="card-body">
@@ -107,11 +107,22 @@
                             </div>
                         </div>
                         <% } %>
+                <% } else{%>
+                    <h2>No reviews yet.</h2>
+                <% } %>
         </div>
     </div>
 
 
-
+    <script>
+        function checkLogin(event) {
+            const isLoggedIn = <%= currentUser ? 'true' : 'false' %>;
+            if (!isLoggedIn) {
+                event.preventDefault();
+                window.location.href = "/login"; // Redirect to login page
+            }
+        }
+    </script>
     <script>
         const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
         const campground = <%- JSON.stringify(campground) %>
