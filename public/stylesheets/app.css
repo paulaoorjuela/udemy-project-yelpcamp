@@ -4,7 +4,7 @@
 }
 
 #map{
-    width: 500px;
+    width: auto;
     height: 300px;
     margin-bottom: 34px;
 }
@@ -12,3 +12,9 @@
 .all-campgrouds-card{
     width: 25%;
 }
+
+@media (max-width: 991px) {
+    .all-campgrouds-card{
+        width: 100%;
+    }
+  }

@@ -3,7 +3,7 @@
 
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             <div id="campgroundCarousel" class="carousel slide">
                 <div class="carousel-inner">
                     <% campground.images.forEach((image, i)=> { %>
@@ -38,7 +38,7 @@
                     <li class="list-group-item text-muted">
                         <%= campground.location %>
                     </li>
-                    <li class="list-group-item">By: <%= campground.author.username %>
+                    <li class="list-group-item">Submitted by: <%= campground.author.username %>
                     </li>
                     <li class="list-group-item">$<%= campground.price %> / Nigth</li>
                 </ul>
@@ -55,11 +55,11 @@
                         </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             <div id='map'></div>
                 <form class="mb-5 validate-form" action="<%= currentUser ? `/campgrounds/${campground._id}/reviews` : '/login' %>" method="POST"
                     novalidate onsubmit="return checkLogin(event)">
-                    <h2>Leave your review</h2>
+                    <h3 class="mb-2">Leave your review</h3>
                     <fieldset class="starability-basic">
                         <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
                             aria-label="No rating." />
@@ -76,7 +76,7 @@
                     </fieldset>
                     <div class="mb-3">
                         <label class="form-label" for="body">Review</label>
-                        <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3"
+                        <textarea class="form-control" name="review[body]" id="body" cols="10" rows="3"
                             required></textarea>
                         <div class="invalid-feedback">
                             Please enter a valid review.
@@ -89,7 +89,7 @@
                     <% for (let review of campground.reviews) {%>
                         <div class="card mb-3">
                             <div class="card-body">
-                                <h6 class="card-title">By: <%= review.author.username %>
+                                <h6 class="card-title">Submitted by: <%= review.author.username %>
                                 </h6>
                                 <p class="starability-result" data-rating="<%= review.rating %>">
                                     Rated: <%= review.rating %> stars
@@ -108,7 +108,7 @@
                         </div>
                         <% } %>
                 <% } else{%>
-                    <h2>No reviews yet.</h2>
+                    <h5 class="text-muted">No reviews yet.</h5>
                 <% } %>
         </div>
     </div>

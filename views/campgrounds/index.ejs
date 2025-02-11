@@ -7,34 +7,70 @@
     <!-- <div>
         <a href="/campgrounds/new">Add Campground</a>
     </div> -->
-    <div class="d-flex flex-wrap justify-content-center gap-3">
-        <% for (let campground of campgrounds) { %>
-            <div class="card all-campgrouds-card">
-                <% if(campground.images.length) {%>
-                    <img src="<%= campground.images[0].url %>" alt="" class="card-img-top">
+    <div class="d-flex flex-wrap justify-content-center gap-3" id="campgroundContainer">
+        <% for (let i = 0; i < campgrounds.length; i++) { %>
+            <div class="card all-campgrouds-card campground-card" style="<%= i >= 9 ? 'display: none;' : '' %>">
+                <% if(campgrounds[i].images.length) {%>
+                    <img src="<%= campgrounds[i].images[0].url %>" alt="" class="card-img-top">
                     <% } else { %>
                         <img src="https://via.placeholder.com/300x200" alt="" class="card-img-top">
                         <% } %>
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <%= campground.title %>
+                                    <%= campgrounds[i].title %>
                                 </h5>
                                 <p class="card-text">
-                                    <%= campground.description.substring(0, 50) %>...
+                                    <%= campgrounds[i].description.substring(0, 50) %>...
                                 </p>
                                 <p class="card-text">
                                     <small class="text-muted">
-                                        <%= campground.location %>
+                                        <%= campgrounds[i].location %>
                                     </small>
                                 </p>
-                                <a href="/campgrounds/<%= campground._id %>" class="card-link">View <%= campground.title
+                                <a href="/campgrounds/<%= campgrounds[i]._id %>" class="card-link">View <%= campgrounds[i].title
                                         %>&rarr;</a>
                             </div>
             </div>
             <% } %>
     </div>
 
+    <!-- Load More and Show Less Buttons -->
+    <div class="text-center my-4">
+        <button id="loadMore" class="btn btn-outline-primary">Load More</button>
+        <button id="showLess" class="btn btn-secondary" style="display: none;">Show Less</button>
+    </div>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const campgrounds = document.querySelectorAll(".campground-card");
+            const loadMoreBtn = document.getElementById("loadMore");
+            const showLessBtn = document.getElementById("showLess");
+            let visibleCount = 9;
+    
+            loadMoreBtn.addEventListener("click", function () {
+                let nextCount = visibleCount + 9;
+                for (let i = visibleCount; i < nextCount && i < campgrounds.length; i++) {
+                    campgrounds[i].style.display = "block";
+                }
+                visibleCount = nextCount;
+    
+                if (visibleCount >= campgrounds.length) {
+                    loadMoreBtn.style.display = "none";
+                }
+                showLessBtn.style.display = "inline-block";
+            });
+    
+            showLessBtn.addEventListener("click", function () {
+                for (let i = 9; i < campgrounds.length; i++) {
+                    campgrounds[i].style.display = "none";
+                }
+                visibleCount = 9;
+                loadMoreBtn.style.display = "inline-block";
+                showLessBtn.style.display = "none";
+            });
+        });
+    </script>
     <script>
         const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
         const campgrounds = { features: <%- JSON.stringify(campgrounds) %>}
