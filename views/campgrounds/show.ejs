@@ -119,7 +119,7 @@
             const isLoggedIn = <%= currentUser ? 'true' : 'false' %>;
             if (!isLoggedIn) {
                 event.preventDefault();
-                window.location.href = "/login"; // Redirect to login page
+                window.location.href = "/register"; // Redirect to register page
             }
         }
     </script>

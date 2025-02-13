@@ -13,9 +13,12 @@ module.exports = {
         "https://use.fontawesome.com/",
         "https://cdn.jsdelivr.net",
         "https://cdn.maptiler.com/",
+        "https://cdnjs.cloudflare.com"
     ],
     connectSrcUrls: [
         "https://api.maptiler.com/",
     ],
-    fontSrcUrls: []
+    fontSrcUrls: [
+        "https://cdnjs.cloudflare.com"
+    ]
 };

@@ -1,32 +1,32 @@
 <% layout('layouts/boilerplate') %>
+    <link rel="stylesheet" href="/stylesheets/users.css">
 
-<div class="container d-flex justify-content-center align-items-center mb-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+    <div class="d-flex justify-content-center align-items-center mb-5">
+        <div class="form-container">
             <div class="card shadow">
                 <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
                     alt="" class="card-img-top" />
                 <div class="card-body">
-                    <h5 class="card-title">Login</h5>
+                    <h5 class="card-title mb-3">Login</h5>
                     <form action="/login" method="POST" class="validate-form" novalidate>
-                        <div class="mb-3">
-                            <label class="form-label" for="username">Username</label>
-                            <input class="form-control" type="text" id="username" name="username" required>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-label="Username" aria-describedby="Username" required>
+                            <span class="input-group-text rounded-end" id="Username"><i class="fa-solid fa-user"></i></span>
                             <div class="invalid-feedback">
-                                Please enter a valid campground Username.
+                                Please enter a valid Username.
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="password">Password</label>
-                            <input class="form-control" type="password" id="password" name="password" required>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-label="Password" aria-describedby="Email" required>
+                            <span class="input-group-text rounded-end" id="Password"><i class="fa-solid fa-lock"></i></span>
                             <div class="invalid-feedback">
-                                Please enter a valid campground Paswword.
+                                Please enter a valid Paswword.
                             </div>
                         </div>
+                        <p class="float-end mb-2">Don't have an account?<a href="/register"> Sign up</a></p>
                         <button class="btn btn-success w-100">Register</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>

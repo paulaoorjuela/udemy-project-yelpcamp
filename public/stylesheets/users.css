@@ -1,0 +1,14 @@
+.form-container{
+    width: 40%;
+}
+
+.card-img-top{
+    height: 245px;
+    object-fit: cover;
+}
+
+@media (max-width: 991px) {
+    .form-container{
+        width: 100%;
+    }
+  }
