@@ -1,32 +1,35 @@
 <% layout('layouts/boilerplate') %>
     <link rel="stylesheet" href="/stylesheets/users.css">
-
-    <div class="d-flex justify-content-center align-items-center mb-5">
-        <div class="form-container">
-            <div class="card shadow">
-                <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
-                    alt="" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Login</h5>
-                    <form action="/login" method="POST" class="validate-form" novalidate>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-label="Username" aria-describedby="Username" required>
-                            <span class="input-group-text rounded-end" id="Username"><i class="fa-solid fa-user"></i></span>
-                            <div class="invalid-feedback">
-                                Please enter a valid Username.
+        <div class="d-flex justify-content-center align-items-center h-auto">
+            <div class="form-container">
+                <div class="card shadow">
+                    <img src="https://images.unsplash.com/photo-1563299796-17596ed6b017?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="" class="card-img-top d-block d-lg-none" />
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Login</h5>
+                        <form action="/login" method="POST" class="validate-form" novalidate>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Username" aria-label="Username" aria-describedby="Username" required>
+                                <span class="input-group-text rounded-end" id="Username"><i
+                                        class="fa-solid fa-user"></i></span>
+                                <div class="invalid-feedback">
+                                    Please enter a valid Username.
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-label="Password" aria-describedby="Email" required>
-                            <span class="input-group-text rounded-end" id="Password"><i class="fa-solid fa-lock"></i></span>
-                            <div class="invalid-feedback">
-                                Please enter a valid Paswword.
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Password" aria-label="Password" aria-describedby="Email" required>
+                                <span class="input-group-text rounded-end" id="Password"><i
+                                        class="fa-solid fa-lock"></i></span>
+                                <div class="invalid-feedback">
+                                    Please enter a valid Paswword.
+                                </div>
                             </div>
-                        </div>
-                        <p class="float-end mb-2">Don't have an account?<a href="/register"> Sign up</a></p>
-                        <button class="btn btn-success w-100">Register</button>
-                    </form>
+                            <p class="float-end mb-2">Don't have an account?<a href="/register"> Sign up</a></p>
+                            <button class="btn btn-success w-100">Register</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>

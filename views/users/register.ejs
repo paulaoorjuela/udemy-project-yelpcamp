@@ -1,11 +1,11 @@
 <% layout('layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/users.css">
 
-    <div class="d-flex justify-content-center align-items-center mb-5">
+    <div class="d-flex justify-content-center align-items-center h-auto">
         <div class="form-container">
             <div class="card shadow">
                 <img src="https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="" class="card-img-top" />
+                    alt="" class="card-img-top d-block d-lg-none"/>
                 <div class="card-body">
                     <h5 class="card-title mb-3">Create an account</h5>
                     <form action="/register" method="POST" class="validate-form" novalidate>
@@ -37,3 +37,7 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.body.classList.add("register-page");
+    </script>

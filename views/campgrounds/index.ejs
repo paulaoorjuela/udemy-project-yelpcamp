@@ -4,7 +4,7 @@
     <h1>Welcome to <strong>YelpCamp</strong></h1>
     <p>Here you can discover campgrounds near your location.</p>
     </div>
-    <div class="d-flex flex-wrap justify-content-center gap-3" id="campgroundContainer">
+    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4" id="campgroundContainer">
         <% for (let i = 0; i < campgrounds.length; i++) { %>
             <div class="card all-campgrouds-card campground-card" style="<%= i >= 9 ? 'display: none;' : '' %>">
                 <% if(campgrounds[i].images.length) {%>
@@ -33,7 +33,7 @@
 
     <!-- Load More and Show Less Buttons -->
     <% if (campgrounds.length > 9) { %>
-    <div class="text-center my-4">
+    <div class="text-center mb-4">
         <button id="loadMore" class="btn btn-outline-primary">Load More</button>
         <button id="showLess" class="btn btn-secondary" style="display: none;">Show Less</button>
     </div>

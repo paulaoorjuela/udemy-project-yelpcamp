@@ -36,4 +36,9 @@ body{
     .all-campgrouds-card{
         width: 100%;
     }
+    .index-banner {
+        background-position: 0px -59px;
+        height: 142px;
+        font-size: 20px;
+    }
   }

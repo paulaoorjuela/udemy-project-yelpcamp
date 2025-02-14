@@ -4,7 +4,7 @@ const map = new maptilersdk.Map({
     container: 'cluster-map',
     style: maptilersdk.MapStyle.BRIGHT,
     center: [0, 0],
-    zoom: 0
+    zoom: 1
 });
 
 map.on('load', function () {
