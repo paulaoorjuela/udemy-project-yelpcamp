@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 body{
     background-color: #eeeeee;
+}
+
+.lexend-light {
+    font-family: "Lexend";
+    font-weight: 300;
+    font-style: normal;
+}
+
+.lexend-regular {
+    font-family: "Lexend";
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lexend-semibold {
+    font-family: "Lexend";
+    font-weight: 600;
+    font-style: normal;
 }
 
 #cluster-map{
@@ -22,7 +42,7 @@ body{
     background-image: url(https://images.unsplash.com/photo-1500581276021-a4bbcd0050c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -6px -391px;
+    background-position: -6px -450px;
     height: 215px;
     display: flex;
     justify-content: center;
@@ -32,13 +52,20 @@ body{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.campground-form-container{
+    width: 50%;
+}
+
 @media (max-width: 991px) {
     .all-campgrouds-card{
         width: 100%;
     }
     .index-banner {
-        background-position: 0px -59px;
+        background-position: 0px -84px;
         height: 142px;
         font-size: 20px;
+    }
+    .campground-form-container{
+        width: 100%;
     }
   }

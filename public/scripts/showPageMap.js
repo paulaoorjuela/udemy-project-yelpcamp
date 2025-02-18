@@ -12,7 +12,7 @@ new maptilersdk.Marker()
     .setPopup(
         new maptilersdk.Popup({ offset: 25 })
             .setHTML(
-                `<h3>${campground.title}</h3><p>${campground.location}</p>`
+                `<h5 class="lexend-regular mb-0">${campground.title}</h5><p class="mb-0">${campground.location}</p>`
             )
     )
     .addTo(map)

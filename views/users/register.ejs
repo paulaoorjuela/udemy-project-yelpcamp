@@ -1,13 +1,13 @@
 <% layout('layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/users.css">
 
-    <div class="d-flex justify-content-center align-items-center h-auto">
+    <div class="d-flex justify-content-center align-items-center h-auto lexend-regular mb-3 mt-lg-5">
         <div class="form-container">
             <div class="card shadow">
                 <img src="https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="" class="card-img-top d-block d-lg-none"/>
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Create an account</h5>
+                <div class="card-body p-5">
+                    <h5 class="card-title mb-4 fs-2 text-center">Create an account</h5>
                     <form action="/register" method="POST" class="validate-form" novalidate>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-label="Username" aria-describedby="Username" required>
@@ -23,7 +23,7 @@
                                 Please enter a valid Email.
                             </div>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-4">
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-label="Password" aria-describedby="Email" required>
                             <span class="input-group-text rounded-end" id="Password"><i class="fa-solid fa-lock"></i></span>
                             <div class="invalid-feedback">

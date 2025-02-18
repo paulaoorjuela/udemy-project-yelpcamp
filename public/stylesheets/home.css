@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.lexend-light {
+    font-family: "Lexend";
+    font-weight: 300;
+    font-style: normal;
+}
+
+.lexend-regular {
+    font-family: "Lexend";
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lexend-semibold {
+    font-family: "Lexend";
+    font-weight: 600;
+    font-style: normal;
+}
+
 body {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -13,7 +33,6 @@ body {
 
 .nav-link {
     padding: 0.25rem 0;
-    font-weight: 700;
     color: rgba(255,255,255,0.5);
     margin-left: 1rem;
     border-bottom: 0.25rem solid transparent;

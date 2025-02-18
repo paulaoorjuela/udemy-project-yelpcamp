@@ -19,6 +19,7 @@ module.exports = {
         "https://api.maptiler.com/",
     ],
     fontSrcUrls: [
-        "https://cdnjs.cloudflare.com"
+        "https://cdnjs.cloudflare.com",
+        "https://fonts.gstatic.com"
     ]
 };
