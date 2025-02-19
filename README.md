@@ -43,7 +43,7 @@ A full-stack web application where users can create, view, and review campground
 1. Clone the repository:
     ```bash
     git clone https://github.com/paulaoorjuela/udemy-project-yelpcamp.git
-    cd udemy-project-yelpcamp
+    cd yelpcamp
 
 2. Install dependencies:
     ```bash
