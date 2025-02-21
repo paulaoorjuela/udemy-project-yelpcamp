@@ -7,11 +7,13 @@
     <div class="d-flex flex-wrap justify-content-center gap-3 mb-4" id="campgroundContainer">
         <% for (let i = 0; i < campgrounds.length; i++) { %>
             <div class="card all-campgrouds-card campground-card lexend-regular" style="<%= i >= 9 ? 'display: none;' : '' %>">
+                <div class="image-container">
                 <% if(campgrounds[i].images.length) {%>
                     <img src="<%= campgrounds[i].images[0].url %>" alt="" class="card-img-top">
                     <% } else { %>
                         <img src="https://via.placeholder.com/300x200" alt="" class="card-img-top">
                         <% } %>
+                </div>
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <%= campgrounds[i].title %>

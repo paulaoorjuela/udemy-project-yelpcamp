@@ -4,7 +4,7 @@ maptilerClient.config.apiKey = process.env.MAPTILER_API_KEY;
 const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
-    const campgrounds = await Campground.find({})
+    const campgrounds = await Campground.find({}).sort({ createdAt: -1 });
     res.render('campgrounds/index', { campgrounds });
 }
 
