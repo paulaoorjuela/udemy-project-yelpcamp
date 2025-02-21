@@ -12,7 +12,7 @@ A full-stack web application where users can create, view, and review campground
 
 - Image uploads
 
-- Map integration (using Mapbox)
+- Map integration (using MapTiler)
 
 - Responsive design
 
